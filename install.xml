@@ -10,7 +10,7 @@
 
 		<description lang="en">Bad Behavior for phpBB3</description>
 
-		<author-notes lang="en">Based upon Bad Behavior 2.2.13</author-notes>
+		<author-notes lang="en">Based upon Bad Behavior 2.2.14</author-notes>
 
 		<author-group>
 			<author>
@@ -40,6 +40,14 @@
 		</installation>
 
 		<history>
+			<entry>
+				<date>2013-04-09</date>
+
+				<rev-version>2.0.0</rev-version>
+				<changelog lang="en">
+					<change>Switch to Bad Behavior 2.2.14</change>
+				</changelog>
+			</entry>
 			<entry>
 				<date>2013-04-08</date>
 

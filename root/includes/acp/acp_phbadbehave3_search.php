@@ -77,7 +77,7 @@ class acp_phbadbehave3_search
 						$request .= " WHERE $field $comparison '$value' ";
 					}
 					$request .= " ORDER BY $orderby $order";
-					$result = $db->sql_query($request, $limit);
+					$result = $db->sql_query_limit($request, $limit);
 				}
 			}
 		}

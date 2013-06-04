@@ -47,7 +47,13 @@ global $table_prefix;
 
 $versions = array(
 	//Version 1.0
+	'2.0.1' => array(
+		// Nothing changed
+	),
 	'2.0.0' => array(
+		// Nothing changed
+	),
+	'1.0.0' => array(
 		//Add module
 		'module_add' => array(
 			array('acp', 0, 'ACP_PBB3_MENU'),

@@ -37,12 +37,12 @@
 
 			<level>easy</level>
 			<time>300</time>
-			<target-version>3.0.9</target-version>
+			<target-version>3.0.11</target-version>
 		</installation>
 
 		<history>
 			<entry>
-				<date>2013-04-09</date>
+				<date>2013-05-04</date>
 
 				<rev-version>2.0.1</rev-version>
 				<changelog lang="en">

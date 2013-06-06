@@ -110,20 +110,20 @@ function bb2_table_structure($name)
 {
 	// It's not paranoia if they really are out to get you.
 	$name_escaped = bb2_db_escape($name);
-	return "CREATE TABLE IF NOT EXISTS `$name_escaped` (
-		`id` INT(11) NOT NULL auto_increment,
-		`ip` TEXT NOT NULL,
-		`date` DATETIME NOT NULL default '0000-00-00 00:00:00',
-		`request_method` TEXT NOT NULL,
-		`request_uri` TEXT NOT NULL,
-		`server_protocol` TEXT NOT NULL,
-		`http_headers` TEXT NOT NULL,
-		`user_agent` TEXT NOT NULL,
-		`request_entity` TEXT NOT NULL,
-		`key` TEXT NOT NULL,
-		INDEX (`ip`(15)),
-		INDEX (`user_agent`(10)),
-		PRIMARY KEY (`id`) );";	// TODO: INDEX might need tuning
+	return "CREATE TABLE IF NOT EXISTS [$name_escaped] (
+		id INT(11) NOT NULL auto_increment,
+		ip TEXT NOT NULL,
+		date DATETIME NOT NULL default '0000-00-00 00:00:00',
+		request_method TEXT NOT NULL,
+		request_uri TEXT NOT NULL,
+		server_protocol TEXT NOT NULL,
+		http_headers TEXT NOT NULL,
+		user_agent TEXT NOT NULL,
+		request_entity TEXT NOT NULL,
+		key TEXT NOT NULL,
+		INDEX (ip(15)),
+		INDEX (user_agent(10)),
+		PRIMARY KEY (id) );";	// TODO: INDEX might need tuning
 }
 
 // Create the SQL query for inserting a record in the database.
@@ -146,8 +146,8 @@ function bb2_insert($settings, $package, $key)
 			$request_entity .= bb2_db_escape("$h: $v\n");
 		}
 	}
-	return "INSERT INTO `" . bb2_db_escape($settings['log_table']) . "`
-		(`ip`, `date`, `request_method`, `request_uri`, `server_protocol`, `http_headers`, `user_agent`, `request_entity`, `key`) VALUES
+	return "INSERT INTO [" . bb2_db_escape($settings['log_table']) . "]
+		(ip, date, request_method, request_uri, server_protocol, http_headers, user_agent, request_entity, key) VALUES
 		('$ip', '$date', '$request_method', '$request_uri', '$server_protocol', '$headers', '$user_agent', '$request_entity', '$key')";
 }
 

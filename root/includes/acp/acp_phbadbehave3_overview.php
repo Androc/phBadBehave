@@ -58,6 +58,8 @@ class acp_phbadbehave3_overview
 			case 'overview':
 				$this->page_title = 'ACP_PBB3_TITLE_OVERVIEW';
 				$this->tpl_name = 'acp_phbadbehave3_overview';
+				
+				include($phpbb_root_path.'/bb2.2.x/responses.inc.'.$phpEx);
 
 				//purging		
 				$form_key = 'pbb3_purge';
@@ -91,7 +93,8 @@ class acp_phbadbehave3_overview
 						'URL'		=> $row['request_uri'],
 						'AGENT'		=> $row['user_agent'],
 						'KEY'		=> $row['code'],
-						'ROW'		=> ($i++) % 2 +1));
+						'ROW'		=> ($i++) % 2 +1,
+						'REASON'	=> bb2_get_response($row['code'])['log']));
 				}
 				if (0 == $i)
 				{
@@ -113,7 +116,8 @@ class acp_phbadbehave3_overview
 						'URL'		=> $row['request_uri'],
 						'AGENT'		=> $row['user_agent'],
 						'KEY'		=> $row['code'],
-						'ROW'		=> ($i++) % 2 +1));
+						'ROW'		=> ($i++) % 2 +1,
+						'REASON'	=> bb2_get_response($row['code'])['log']));
 				}
 				if (0 == $i)
 				{
@@ -137,7 +141,8 @@ class acp_phbadbehave3_overview
 						'PERCENTAGE'=> round($row['sum'] / $total * 100 . '%', 2),
 						'KEY'		=> $row['code'],
 						'LAST'		=> date($config['default_dateformat'], strtotime($row['last'])),
-						'ROW'		=> ($i++) % 2 +1));
+						'ROW'		=> ($i++) % 2 +1,
+						'REASON'	=> bb2_get_response($row['code'])['log']));
 				}
 				if (0 == $i) {
 					$template->assign_block_vars('bh_lucky', array());

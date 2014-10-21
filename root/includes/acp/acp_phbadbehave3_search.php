@@ -30,6 +30,8 @@ class acp_phbadbehave3_search
 
 		$this->page_title = 'ACP_PBB3_TITLE_SEARCH';
 		$this->tpl_name = 'acp_phbadbehave3_search';
+		
+		include($phpbb_root_path.'/bb2.2.x/responses.inc.'.$phpEx);
 
 		$form_key = 'pbb3_search';
 		add_form_key($form_key);
@@ -92,7 +94,8 @@ class acp_phbadbehave3_search
 				'URL'		=> $row['request_uri'],
 				'AGENT'		=> $row['user_agent'],
 				'KEY'		=> $row['code'],
-				'ROW'		=> ($i++) % 2 +1));
+				'ROW'		=> ($i++) % 2 +1,
+				'REASON'	=> bb2_get_response($row['code'])['log']));
 		}
 		if (0 == $i)
 		{

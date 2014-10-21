@@ -10,3 +10,12 @@ You can open it with any modern Webbrowser.
 v2.0.2:
 - Supports Bad Behave 2.2.15
 - Tooltips on keys in search and overview pages
+
+v2.0.1:
+- Fix a bug using MODX 1.2.6
+
+v2.0.0:
+- Support Bad Behave 2.2.14
+
+v1.0 and before:
+- Developed by initial author https://github.com/philnate/phBadBehave

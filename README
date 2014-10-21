@@ -6,3 +6,7 @@ More details here : http://bad-behavior.ioerror.us/about/
 For Installation details please see the install.xml file.
 
 You can open it with any modern Webbrowser.
+
+v2.0.2:
+- Supports Bad Behave 2.2.15
+- Tooltips on keys in search and overview pages

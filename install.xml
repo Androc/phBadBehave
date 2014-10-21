@@ -10,7 +10,7 @@
 
 		<description lang="en">Bad Behavior for phpBB3</description>
 
-		<author-notes lang="en">Based upon Bad Behavior 2.2.14</author-notes>
+		<author-notes lang="en">Based upon Bad Behavior 2.2.15</author-notes>
 
 		<github>https://github.com/Androc/phBadBehave</github>
 		<author-group>
@@ -31,7 +31,7 @@
 		      		</contributions-group>
 			</author>
 		</author-group>
-		<mod-version>2.0.1</mod-version>
+		<mod-version>2.0.2</mod-version>
 
 		<installation>
 
@@ -41,6 +41,14 @@
 		</installation>
 
 		<history>
+			<entry>
+				<date>2014-10-21</date>
+
+				<rev-version>2.0.2</rev-version>
+				<changelog lang="en">
+					<change>Switch to Bad Behavior 2.2.15 and lengends on tooltips</change>
+				</changelog>
+			</entry>
 			<entry>
 				<date>2013-05-04</date>
 

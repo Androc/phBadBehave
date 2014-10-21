@@ -1,9 +1,8 @@
 <?php if (!defined('BB2_CORE')) die('I said no cheating!');
-
+global $bb2_responses;
 // Defines the responses which Bad Behavior might return.
 
-function bb2_get_response($key) {
-	$bb2_responses = array(
+$bb2_responses = array(
 		'00000000' => array('response' => 200, 'explanation' => '', 'log' => 'Permitted'),
 		'136673cd' => array('response' => 403, 'explanation' => 'Your Internet Protocol address is listed on a blacklist of addresses involved in malicious or illegal activity. See the listing below for more details on specific blacklists and removal procedures.', 'log' => 'IP address found on external blacklist'),
 		'17566707' => array('response' => 403, 'explanation' => 'An invalid request was received from your browser. This may be caused by a malfunctioning proxy server or browser privacy software.', 'log' => 'Required header \'Accept\' missing'),
@@ -47,6 +46,8 @@ function bb2_get_response($key) {
 		'f9f2b8b9' => array('response' => 403, 'explanation' => 'You do not have permission to access this server. This may be caused by a malfunctioning proxy server or browser privacy software.', 'log' => 'A User-Agent is required but none was provided.'),
 	);
 
+function bb2_get_response($key) {
+	global $bb2_responses;
 	if (array_key_exists($key, $bb2_responses)) return $bb2_responses[$key];
 	return array('00000000');
 }
